@@ -13,3 +13,4 @@ include $(LOCAL_PATH)/product/*.mk
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/gt58wifi/overlay
+
