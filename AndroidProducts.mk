@@ -10,4 +10,4 @@
 #
   
 PRODUCT_MAKEFILES := \
-  $(LOCAL_DIR)/aicp.mk 
+  $(LOCAL_DIR)/aicp_gt58wifi.mk 
