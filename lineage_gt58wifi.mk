@@ -1,5 +1,5 @@
 # Inherit from common
-$(call inherit-product, device/samsung/gte-common/lineage.mk)
+$(call inherit-product, device/samsung/gte-common/aosp.mk)
 
 # Product makefile
 $(call inherit-product, device/samsung/gt58wifi/device.mk)
