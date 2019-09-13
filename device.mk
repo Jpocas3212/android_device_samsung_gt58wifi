@@ -8,7 +8,11 @@ LOCAL_PATH := device/samsung/gt58wifi
 
 
 # Include package config fragments
-#include $(LOCAL_PATH)/product/*.mk
+include $(LOCAL_PATH)/product/*.mk
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/gt58wifi/overlay
+
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
