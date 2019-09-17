@@ -4,6 +4,8 @@ $(call inherit-product, device/samsung/gte-common/lineage.mk)
 # Product makefile
 $(call inherit-product, device/samsung/gt58wifi/device.mk)
 
+#TWRP
+BUILD_TWRP :=true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1024
