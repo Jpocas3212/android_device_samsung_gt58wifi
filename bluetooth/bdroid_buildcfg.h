@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
- * Copyright (C) 2013 The CyanogenMod Project <http://www.cyanogenmod.org>
+ * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,32 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Samsung Galaxy Tab A"
+#include <stdint.h>
+#include <string.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+int property_get(const char *key, char *value, const char *default_value);
+#ifdef __cplusplus
+}
+#endif
+
+inline const char* BtmGetDefaultName()
+{
+	char device[92];
+	property_get("ro.boot.device", device, "");
+
+	if (!strcmp("gt58wifi", device)) {
+		return "Galaxy Tab A";
+	}
+
+	return "Samsung";
+}
+
+#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 #define BLUETOOTH_QTI_SW TRUE
-// Disables read remote device feature
-#define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
-#define MAX_ACL_CONNECTIONS    7
+#define MAX_ACL_CONNECTIONS   7
 #define MAX_L2CAP_CHANNELS    16
-// skips conn update at conn completion
-#define BTA_BLE_SKIP_CONN_UPD  FALSE
-#define BLE_VND_INCLUDED   TRUE
-#define BLE_PERIPHERAL_ADV_NAME  FALSE
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
 #endif
