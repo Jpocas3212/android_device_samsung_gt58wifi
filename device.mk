@@ -3,6 +3,7 @@ $(call inherit-product-if-exists, vendor/samsung/gt58wifi/gt58wifi-vendor.mk)
 
 # Inherit from common
 $(call inherit-product, device/samsung/gte-common/device-common.mk)
+$(call inherit-product-if-exists, vendor/gapps/arm/arm-vendor.mk)
 
 LOCAL_PATH := device/samsung/gt58wifi
 

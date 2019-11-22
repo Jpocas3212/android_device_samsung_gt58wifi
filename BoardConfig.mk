@@ -7,7 +7,11 @@ LOCAL_PATH := device/samsung/gt58wifi
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := gt58wifi,gt58wifixx,SM-T350
 
-	
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/lib/hw/audio.primary.msm8916.so=25 \
+    /vendor/lib/hw/camera.vendor.msm8916.so=25 \
+    /vendor/lib/hw/sensors.vendor.msm8916.so=25
+    
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_gt58wifi_eur_defconfig
 
@@ -15,20 +19,15 @@ TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_gt58wifi_eur_defconfig
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
-# RIL
-BOARD_VENDOR := samsung
-TARGET_NO_RADIOIMAGE := true
+BOARD_USE_LEGACY_UI := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 #RECOVERY_VARIANT := twrp
 
-# Build config
-BUILD_BROKEN_DUP_RULES := true
+PRODUCT_FULL_TREBLE_OVERRIDE := false
 
-#SELINUX_IGNORE_NEVERALLOWS := true
-
-#PRODUCT_FULL_TREBLE_OVERRIDE := false
-
-#PRODUCT_BUILD_RECOVERY_IMAGE := true
 
 # Partition sizes
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3145728000
