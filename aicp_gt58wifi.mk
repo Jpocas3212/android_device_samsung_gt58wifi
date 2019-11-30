@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := Samsung Galaxy Tab A
 
 # Inherit from common
-$(call inherit-product, device/samsung/gte-common/aicp.mk)
+$(call inherit-product, device/samsung/gt58wifi/vendor/aicp.mk)
 
 # Product makefile
 $(call inherit-product, device/samsung/gt58wifi/device.mk)
@@ -19,7 +19,8 @@ PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T350
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_CHARACTERISTICS := tablet
-
+PRODUCT_AAPT_CONFIG := xlarge
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
