@@ -9,14 +9,12 @@
 # it includes.
 #
  
-LOCAL_PATH := device/samsung/gt58wifi
-
 PRODUCT_MAKEFILES := \
-  $(LOCAL_DIR)/lineage_gt58wifi.mk \
-  $(LOCAL_DIR)/havoc_gt58wifi.mk \
-  $(LOCAL_DIR)/aicp_gt58wifi.mk
+	$(LOCAL_DIR)/lineage_gt58wifi.mk \
+	$(LOCAL_DIR)/havoc_gt58wifi.mk \
+	$(LOCAL_DIR)/aicp_gt58wifi.mk
   
-COMMON_LUNCH_CHOICES :=\
-  lineage_gt58wifi-userdebug \
-  havoc_gt58wifi-userdebug \
-  aicp_gt58wifi-userdebug
+COMMON_LUNCH_CHOICES := \
+	lineage_gt58wifi-userdebug \
+	havoc_gt58wifi-userdebug \
+	aicp_gt58wifi-userdebug
